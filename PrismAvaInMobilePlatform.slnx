@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="PrismAvaInMobilePlatform/PrismAvaInMobilePlatform.Android/PrismAvaInMobilePlatform.Android.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="PrismAvaInMobilePlatform/PrismAvaInMobilePlatform.Desktop/PrismAvaInMobilePlatform.Desktop.csproj" />
+  <Project Path="PrismAvaInMobilePlatform/PrismAvaInMobilePlatform/PrismAvaInMobilePlatform.csproj" />
+</Solution>

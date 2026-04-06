@@ -1,0 +1,30 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+			 xmlns:avalonia="using:Material.Icons.Avalonia"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="850"
+			 xmlns:prism="http://prismlibrary.com/"
+			 xmlns:viewmodels="using:PrismAvaInMobilePlatform.ViewModels"
+			 prism:ViewModelLocator.AutoWireViewModel="True"
+			 x:DataType="viewmodels:MainViewModel"
+             FontFamily="{StaticResource HarmonyFont}"
+			 x:Class="PrismAvaInMobilePlatform.Views.MainView"
+			 x:Name="Main">
+	<StackPanel  Spacing="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+		<Button Command="{Binding TakePhotoCommand}">摄像头</Button>
+		<Button Command="{Binding TakeVideoCommand}">拍视频</Button>
+		<Button Command="{Binding SelectSinglePhotoCommand }">选择单张照片</Button>
+		<Button Command="{Binding SelectMultiplePhotoCommand}">选择多张照片</Button>
+		<Button Command="{Binding  OpenFlashlightCommand}" >打开手电筒</Button>
+		<Button Command="{Binding  CloseFlashlightCommand}" >关闭手电筒</Button>
+		<Button Command="{Binding VibrateCommand}">震动</Button>
+		<Button Command="{Binding OpenUriCommand}">打开 0use.net</Button>
+		<TextBlock Text="{Binding MyDeviceInfo}" ></TextBlock>
+	</StackPanel>
+	<Interaction.Behaviors>
+		<LoadedTrigger>
+			<InvokeCommandAction Command="{Binding SetNotificationHostCommand}" CommandParameter="{Binding #Main}"></InvokeCommandAction>
+		</LoadedTrigger>
+	</Interaction.Behaviors>
+</UserControl>
