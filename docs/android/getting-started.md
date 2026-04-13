@@ -4,7 +4,6 @@
 
 - .NET 10.0 SDK
 - Android SDK (API 21+)
-- 支持 Android 的设备或模拟器
 
 ## 安装 Android 工作负载
 
@@ -12,7 +11,7 @@
 dotnet workload install android
 ```
 
-## 运行 Android 应用
+## 运行应用
 
 ```bash
 dotnet run -f net10.0-android
@@ -24,22 +23,41 @@ dotnet run -f net10.0-android
 dotnet publish -f net10.0-android -c Release
 ```
 
-## Android 项目结构
+## 项目结构
 
 ```
-PrismAvaInMobilePlatform.Android/
-├── MainApplication.cs       # Android 入口
-├── Activity.cs              # MainActivity
-└── ...
+PrismAvaInMobilePlatform/
+├── PrismAvaInMobilePlatform/           # 共享代码
+│   ├── ViewModels/MainViewModel.cs     # 主视图模型（含原生功能）
+│   ├── Views/MainView.axaml            # 主视图
+│   └── Services/NotificationService.cs  # 通知服务
+├── PrismAvaInMobilePlatform.Android/   # Android 特定代码
+│   ├── MainActivity.cs                  # 入口Activity
+│   └── AndroidManifest.xml              # 权限配置
 ```
 
-## 配置 Android 清单
-
-在 `AndroidManifest.xml` 中添加权限:
+## AndroidManifest.xml 权限配置
 
 ```xml
-<manifest>
-  <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 </manifest>
 ```
+
+## 已实现的功能
+
+- 拍照 / 拍视频
+- 选择照片（单选/多选）
+- 手电筒控制
+- 震动反馈
+- 浏览器跳转
+- 设备信息显示
+- 深色/浅色主题切换
+- 窗口通知
+
+## 下一步
+
+- [原生 Android 功能](native-integration.md)
