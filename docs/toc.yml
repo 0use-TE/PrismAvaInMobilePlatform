@@ -1,4 +1,18 @@
-- name: Introduction
+- name: 介绍
   href: introduction.md
-- name: Getting Started
-  href: getting-started.md
+- name: Android 入门
+  href: android/getting-started.md
+- name: 功能教程
+  items:
+  - name: 拍照
+    href: android/features/camera-photo.md
+  - name: 拍视频
+    href: android/features/camera-video.md
+  - name: 文件选择
+    href: android/features/file-picker.md
+  - name: 手电筒
+    href: android/features/flashlight.md
+  - name: 震动
+    href: android/features/vibration.md
+  - name: 浏览器
+    href: android/features/browser.md

@@ -27,7 +27,8 @@
       "_appName": "mysite",
       "_appTitle": "mysite",
       "_enableSearch": true,
-      "pdf": true
+      "pdf": true,
+      "_disableNextArticle": true
     }
   }
 }
