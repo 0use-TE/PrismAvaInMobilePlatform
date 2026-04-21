@@ -1,18 +1,21 @@
-- name: 介绍
+- name: 简介
   href: introduction.md
-- name: Android 入门
-  href: android/getting-started.md
-- name: 功能教程
+- name: 快速开始
+  href: getting-started.md
+- name: Android 权限配置
+  href: android/permissions.md
+- name: API 教程
+  href: android/tutorials/index.md
   items:
-  - name: 拍照
-    href: android/features/camera-photo.md
-  - name: 拍视频
-    href: android/features/camera-video.md
-  - name: 文件选择
-    href: android/features/file-picker.md
-  - name: 手电筒
-    href: android/features/flashlight.md
-  - name: 震动
-    href: android/features/vibration.md
-  - name: 浏览器
-    href: android/features/browser.md
+    - name: 相机拍照
+      href: android/tutorials/camera-photo.md
+    - name: 相机录像
+      href: android/tutorials/camera-video.md
+    - name: 文件选择器
+      href: android/tutorials/file-picker.md
+    - name: 闪光灯
+      href: android/tutorials/flashlight.md
+    - name: 振动
+      href: android/tutorials/vibration.md
+    - name: 浏览器
+      href: android/tutorials/browser.md

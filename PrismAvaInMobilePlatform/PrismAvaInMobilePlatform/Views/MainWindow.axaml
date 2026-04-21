@@ -1,5 +1,4 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
-        xmlns:avalonia="using:Material.Icons.Avalonia"
+<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PrismAvaInMobilePlatform.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,8 +8,7 @@
         Width="450"
         Height="800"
         x:Class="PrismAvaInMobilePlatform.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/logo.ico"
+        x:DataType="vm:MainViewModel"
         Title="{Binding Title}">
     <local:MainView></local:MainView>
 </Window>

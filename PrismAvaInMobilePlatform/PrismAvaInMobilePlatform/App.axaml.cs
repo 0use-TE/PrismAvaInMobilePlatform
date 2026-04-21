@@ -1,72 +1,26 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
-using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using Avalonia.Threading;
-using DryIoc.Microsoft.DependencyInjection;
-using GameDevTools.Services;
-using Microsoft.Extensions.DependencyInjection;
-using Prism.Container.DryIoc;
-using Prism.DryIoc;
-using Prism.Ioc;
-using Prism.Navigation.Regions;
-using PrismAvaInMobilePlatform.ViewModels;
 using PrismAvaInMobilePlatform.Views;
-using Serilog;
-using System;
 
 namespace PrismAvaInMobilePlatform
 {
-    public partial class App : PrismApplication
+    public class App : Application
     {
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
-
-            // Required when overriding Initialize
-            base.Initialize();
         }
-
-        protected override AvaloniaObject CreateShell()
+        public override void OnFrameworkInitializationCompleted()
         {
-            // 如果是桌面端，返回 MainWindow
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime)
-            {
-                return Container.Resolve<MainWindow>();
-            }
-
-            // 如果是 WASM 或移动端，返回 MainView (UserControl)
-            return Container.Resolve<MainView>();
-        }
-
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-#if BROWSER
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
-                .WriteTo.Debug()
-                .CreateLogger();
-#else
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
-           .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
-           .WriteTo.Debug()
-           .CreateLogger();
-#endif
-
-            var serviceColllection = new ServiceCollection();
-            serviceColllection.AddSingleton<INotificationService, NotificationService>();
-            //Logging
-            serviceColllection.AddLogging(builder =>
-            {
-                builder.AddSerilog(dispose: true);
-            });
-
-            //Pupulate ServiceCollection To DryIoc
-            containerRegistry.GetContainer().Populate(serviceColllection);
-
-            // Register you Services, Views, Dialogs, etc.
-
+            // Create the main window or main view based on application lifetime
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+                desktop.MainWindow = new MainWindow();
+            else if (ApplicationLifetime is IActivityApplicationLifetime singleViewFactoryApplicationLifetime)
+                singleViewFactoryApplicationLifetime.MainViewFactory = () => new MainView();
+            else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
+                singleViewPlatform.MainView = new MainView();
         }
     }
 }

@@ -2,34 +2,21 @@
 _layout: landing
 ---
 
-# PrismAvaInMobilePlatform
+# Avalonia Android 开发文档
 
-基于 **Avalonia** 的 Android 跨平台应用模板。
+基于 **Avalonia + Microsoft.Maui.Essentials** 的 Android 跨平台应用开发指南。
 
-## 技术栈
+## 开始使用
 
-- Avalonia 11.3 + Prism.DryIoc 9.0
-- Microsoft.Maui.Essentials (原生 Android 功能)
-- Semi.Avalonia 主题
+- [简介](docs/introduction.md) - 项目概述
+- [快速开始](docs/getting-started.md) - 构建与运行
+- [权限配置](docs/android/permissions.md) - Android 权限说明
 
-## 需要权限的功能
+## API 教程
 
-| 功能 | 权限 | 文档 |
-|------|------|------|
-| 拍照 | `CAMERA` | [教程](docs/android/features/camera-photo.md) |
-| 拍视频 | `CAMERA` + `RECORD_AUDIO` | [教程](docs/android/features/camera-video.md) |
-| 文件选择 | 无 | [教程](docs/android/features/file-picker.md) |
-| 手电筒 | `FLASHLIGHT` | [教程](docs/android/features/flashlight.md) |
-| 震动 | `VIBRATE` | [教程](docs/android/features/vibration.md) |
-| 浏览器 | `INTERNET` | [教程](docs/android/features/browser.md) |
-
-## 快速开始
-
-```bash
-dotnet run -f net10.0-android
-```
-
-## 文档
-
-- [项目介绍](docs/introduction.md)
-- [Android 入门](docs/android/getting-started.md)
+- [相机拍照](docs/android/tutorials/camera-photo.md) - 拍摄照片
+- [相机录像](docs/android/tutorials/camera-video.md) - 录制视频
+- [文件选择器](docs/android/tutorials/file-picker.md) - 选择图片
+- [闪光灯](docs/android/tutorials/flashlight.md) - 手电筒控制
+- [振动](docs/android/tutorials/vibration.md) - 设备振动
+- [浏览器](docs/android/tutorials/browser.md) - 打开网页

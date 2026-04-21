@@ -1,6 +1,4 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
 namespace PrismAvaInMobilePlatform.Views
 {
@@ -9,6 +7,7 @@ namespace PrismAvaInMobilePlatform.Views
         public MainView()
         {
             InitializeComponent();
+            DataContext = new ViewModels.MainViewModel();
         }
     }
 }

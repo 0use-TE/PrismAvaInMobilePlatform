@@ -6,16 +6,11 @@
 		<Nullable>enable</Nullable>
 		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
-		<!-- 启用压缩 -->
-		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
-		<!-- 将本地库包含在解压内容中 -->
-		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 		<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Avalonia.Desktop" Version="11.3.13" />
-		<PackageReference Include="HotAvalonia" Version="3.1.0" />
+		<PackageReference Include="Avalonia.Desktop" Version="12.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
